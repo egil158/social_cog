@@ -320,16 +320,135 @@
       </div>
       <!--/ Abstract. -->
 
-      <!-- Paper video. -->
-      <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">3 Source Evidence</h2>
-        <div class="publication-video">
-          <img src="./static/images/chimp_main.png" alt="Project teaser" style="width:100%; max-width:720px; border-radius: 8px;">
+      <section class="section">
+        <div class="container">
+          <div class="has-text-centered">
+            <h2 class="title is-3 mb-2">Definitive and Unified Definitions of Power and Status</h2>
+            <!-- <p class="subtitle is-5 has-text-grey">Clear. Unified. Cross-domain.</p> -->
+            <div class="underline mx-auto"></div>
+          </div>
+
+          <div class="columns is-variable is-6 is-vcentered mt-6">
+            <!-- POWER -->
+            <div class="column">
+              <div class="box def-card is-power">
+                <header class="is-flex is-align-items-center is-justify-content-space-between mb-3">
+                  <div class="is-flex is-align-items-center">
+                    <span class="def-icon" aria-hidden="true">⚡</span>
+                    <h3 class="title is-4 mb-0">Power</h3>
+                  </div>
+                  <button class="button is-light is-small copy-btn"
+                    data-copy="Power — the actual relative position in the system, determining one’s true capacity to influence outcomes.">
+                    Copy
+                  </button>
+                </header>
+                <p class="content mb-0">
+                  <strong>Power</strong> — the <em>actual relative position</em> in the system, determining one’s
+                  true capacity to influence outcomes.
+                </p>
+                <p class="tag is-light mt-3">Minimal & Unified</p>
+              </div>
+            </div>
+
+            <!-- STATUS -->
+            <div class="column">
+              <div class="box def-card is-status">
+                <header class="is-flex is-align-items-center is-justify-content-space-between mb-3">
+                  <div class="is-flex is-align-items-center">
+                    <span class="def-icon" aria-hidden="true">🎯</span>
+                    <h3 class="title is-4 mb-0">Status</h3>
+                  </div>
+                  <button class="button is-light is-small copy-btn"
+                    data-copy="Status — the perceived relative position in the system, reflecting how others collectively see and treat that capacity.">
+                    Copy
+                  </button>
+                </header>
+                <p class="content mb-0">
+                  <strong>Status</strong> — the <em>perceived relative position</em> in the system, reflecting how
+                  others collectively see and treat that capacity.
+                </p>
+                <p class="tag is-light mt-3">Minimal & Unified</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div> -->
-      <!--/ Paper video. -->
+      </section>
+
+      <style>
+        /* 細節：標題下劃線（自適應主題） */
+        /* .underline {
+          width: 120px;
+          height: 3px;
+          border-radius: 999px;
+          background: linear-gradient(90deg, #6c63ff, #2ac3ff);
+        } */
+
+        /* 卡片強化：邊框、陰影與 hover 動畫 */
+        .def-card {
+          border: 1px solid rgba(0, 0, 0, .08);
+          transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+        }
+
+        .def-card:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 24px rgba(0, 0, 0, .08);
+          border-color: rgba(0, 0, 0, .12);
+        }
+
+        .def-card .def-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          margin-right: .65rem;
+          font-size: 18px;
+          background: rgba(108, 99, 255, .1);
+        }
+
+        .def-card.is-status .def-icon {
+          background: rgba(42, 195, 255, .12);
+        }
+
+        /* 深色模式優化 */
+        @media (prefers-color-scheme: dark) {
+          .underline {
+            background: linear-gradient(90deg, #9aa5ff, #7dd3fc);
+          }
+
+          .def-card {
+            border-color: rgba(255, 255, 255, .08);
+          }
+
+          .def-card:hover {
+            border-color: rgba(255, 255, 255, .16);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, .5);
+          }
+
+          .box.def-card {
+            background: rgba(255, 255, 255, .03);
+          }
+        }
+      </style>
+
+      <script>
+        // 一鍵複製定義
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+          btn.addEventListener('click', async () => {
+            try {
+              await navigator.clipboard.writeText(btn.dataset.copy);
+              const original = btn.textContent;
+              btn.textContent = 'Copied';
+              setTimeout(() => btn.textContent = original, 1200);
+            } catch (e) {
+              alert('Copy failed');
+            }
+          });
+        });
+      </script>
+
+
 
       <!-- Paper video. -->
       <!-- <div class="columns is-centered has-text-centered" style="margin-bottom: 2rem;"></div> -->

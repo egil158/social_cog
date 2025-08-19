@@ -553,71 +553,16 @@
         </div>
       </div>
 
-      <!DOCTYPE html>
-      <html lang="en">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Cite This Work</h2>
 
-      <head>
-        <meta charset="UTF-8">
-        <title>Citation Example</title>
+          <div class="box cite-box has-text-left">
+            <button class="button is-primary is-light is-rounded is-small cite-copy" data-target="cite-zenodo">
+              📋 Copy
+            </button>
 
-        <!-- Bulma (可選，如果你的 GitHub Page 已經在用就不用重複引入) -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
-        <style>
-          :root {
-            --cite-bg: #f7f7f9;
-            --cite-border: #e6e6ea;
-          }
-
-          @media (prefers-color-scheme: dark) {
-            :root {
-              --cite-bg: #1f1f24;
-              --cite-border: #32323a;
-            }
-          }
-
-          .cite-box {
-            position: relative;
-            background: var(--cite-bg);
-            border: 1px solid var(--cite-border);
-            border-radius: 12px;
-            padding: 1.25rem 1.25rem 1rem;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
-            text-align: left;
-          }
-
-          .cite-box .cite-copy {
-            position: absolute;
-            top: .75rem;
-            right: .75rem;
-          }
-
-          .cite-box pre {
-            margin: 0;
-            padding: .5rem 0 0 0;
-            white-space: pre;
-            overflow-x: auto;
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-            font-size: 0.95rem;
-            line-height: 1.55;
-          }
-
-          .cite-box pre code {
-            background: transparent !important;
-          }
-        </style>
-      </head>
-
-      <body>
-        <section class="section">
-          <div class="container has-text-centered">
-            <h2 class="title is-3">Cite This Work</h2>
-            <div class="box cite-box">
-              <button class="button is-primary is-light is-rounded is-small cite-copy" data-target="cite-zenodo">
-                📋 Copy
-              </button>
-
-              <pre id="cite-zenodo"><code>@misc{diau_2025_16847667,
+            <pre id="cite-zenodo"><code>@misc{diau_2025_16847667,
   author       = {Diau, Egil},
   title        = {Rethinking Social Cognition: Power, Status, and the Myth of Mindreading},
   month        = aug,
@@ -626,39 +571,80 @@
   doi          = {10.5281/zenodo.16847667},
   url          = {https://doi.org/10.5281/zenodo.16847667},
 }</code></pre>
-            </div>
           </div>
-        </section>
+        </div>
+      </div>
 
-        <script>
-          function copyBib(btn) {
-            const id = btn.getAttribute('data-target');
-            const el = document.getElementById(id);
-            const text = el ? el.innerText.trim() : '';
-            if (!text) return;
+      <style>
+        :root {
+          --cite-bg: #f7f7f9;
+          --cite-border: #e6e6ea;
+        }
 
-            navigator.clipboard.writeText(text).then(() => {
-              const old = btn.innerHTML;
-              btn.innerHTML = "✅ Copied!";
-              btn.classList.remove("is-primary", "is-light");
-              btn.classList.add("is-success");
-              setTimeout(() => {
-                btn.innerHTML = old;
-                btn.classList.remove("is-success");
-                btn.classList.add("is-primary", "is-light");
-              }, 1500);
-            });
+        @media (prefers-color-scheme: dark) {
+          :root {
+            --cite-bg: #1f1f24;
+            --cite-border: #32323a;
           }
+        }
 
-          document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.cite-copy').forEach(btn => {
-              btn.addEventListener('click', () => copyBib(btn));
-            });
+        .cite-box {
+          position: relative;
+          background: var(--cite-bg);
+          border: 1px solid var(--cite-border);
+          border-radius: 12px;
+          padding: 1.25rem 1.25rem 1rem;
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+          text-align: left;
+        }
+
+        .cite-box .cite-copy {
+          position: absolute;
+          top: .75rem;
+          right: .75rem;
+        }
+
+        .cite-box pre {
+          margin: 0;
+          padding: .5rem 0 0 0;
+          white-space: pre;
+          overflow-x: auto;
+          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+          font-size: 0.95rem;
+          line-height: 1.55;
+        }
+
+        .cite-box pre code {
+          background: transparent !important;
+        }
+      </style>
+
+      <script>
+        function copyBib(btn) {
+          const id = btn.getAttribute('data-target');
+          const el = document.getElementById(id);
+          const text = el ? el.innerText.trim() : '';
+          if (!text) return;
+
+          navigator.clipboard.writeText(text).then(() => {
+            const old = btn.innerHTML;
+            btn.innerHTML = "✅ Copied!";
+            btn.classList.remove("is-primary", "is-light");
+            btn.classList.add("is-success");
+            setTimeout(() => {
+              btn.innerHTML = old;
+              btn.classList.remove("is-success");
+              btn.classList.add("is-primary", "is-light");
+            }, 1500);
           });
-        </script>
-      </body>
+        }
 
-      </html>
+        document.addEventListener('DOMContentLoaded', () => {
+          document.querySelectorAll('.cite-copy').forEach(btn => {
+            btn.addEventListener('click', () => copyBib(btn));
+          });
+        });
+      </script>
 
       <!-- <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">

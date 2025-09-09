@@ -313,7 +313,205 @@
       </div>
       <!-- </div>   -->
 
+      <section class="section">
+        <div class="container">
+          <div class="has-text-centered">
+            <h2 class="title is-3 mb-2">Theory of Mind: The Evidence Problem</h2>
+            <div class="underline mx-auto"></div>
+            <p class="subtitle is-6 has-text-grey mt-3">
+              Three claims, three failures — clear across psychology & neuroscience.
+            </p>
+          </div>
 
+          <!-- 單一 columns + is-multiline，四張卡等高 -->
+          <div class="columns is-variable is-6 is-multiline mt-6 equalize">
+            <!-- 1. Mindreading Claim -->
+            <div class="column is-half-tablet is-half-desktop">
+              <div class="box def-card is-tom">
+                <header class="card-head mb-3">
+                  <div class="head-left">
+                    <span class="def-icon" aria-hidden="true">🧠</span>
+                    <h3 class="title is-4 mb-0">No Mindreading</h3>
+                  </div>
+                  <button class="button is-light is-small copy-btn"
+                    data-copy="Humans cannot read minds; thoughts are never directly observable. Social inference is guesswork from behavior.">
+                    Copy
+                  </button>
+                </header>
+                <div class="content flex-1">
+                  Humans cannot read minds — thoughts are never directly observable.
+                  What we call “understanding” is inference from behavior, memory, and context.
+                </div>
+                <p class="tag is-light mt-3 stick-bottom">Common-sense constraint</p>
+              </div>
+            </div>
+
+            <!-- 2. Task Evidence -->
+            <div class="column is-half-tablet is-half-desktop">
+              <div class="box def-card is-tom">
+                <header class="card-head mb-3">
+                  <div class="head-left">
+                    <span class="def-icon" aria-hidden="true">🧪</span>
+                    <h3 class="title is-4 mb-0">Tasks Collapse</h3>
+                  </div>
+                  <button class="button is-light is-small copy-btn"
+                    data-copy="Lie detection ≈ 50% (chance). If we can’t track deception, belief-attribution tasks (e.g., false-belief) are weaker and highly artificial.">
+                    Copy
+                  </button>
+                </header>
+                <div class="content flex-1">
+                  Lie detection ≈ <strong>50%</strong> (chance). If deception can’t be tracked,
+                  “belief tracking” via false-belief tasks is even weaker and highly artificial.
+                </div>
+                <p class="tag is-light mt-3 stick-bottom">Behavioral ceiling</p>
+              </div>
+            </div>
+
+            <!-- 3. Neural Claim -->
+            <div class="column is-half-tablet is-half-desktop">
+              <div class="box def-card is-tom">
+                <header class="card-head mb-3">
+                  <div class="head-left">
+                    <span class="def-icon" aria-hidden="true">🧩</span>
+                    <h3 class="title is-4 mb-0">No ToM Module</h3>
+                  </div>
+                  <button class="button is-light is-small copy-btn"
+                    data-copy="TPJ is not a mindreading module; it’s a multifunctional hub (attention, memory, perception).">
+                    Copy
+                  </button>
+                </header>
+                <div class="content flex-1">
+                  The TPJ is <em>not</em> a mindreading module. It’s a multifunctional hub
+                  (attention, memory, perception), not a dedicated ToM circuit.
+                </div>
+                <p class="tag is-light mt-3 stick-bottom">Multifunction TPJ</p>
+              </div>
+            </div>
+
+            <!-- Summary -->
+            <div class="column is-half-tablet is-half-desktop">
+              <div class="box def-card is-summary">
+                <header class="card-head mb-3">
+                  <div class="head-left">
+                    <span class="def-icon" aria-hidden="true">⚠️</span>
+                    <h3 class="title is-4 mb-0">Bottom Line</h3>
+                  </div>
+                  <button class="button is-light is-small copy-btn"
+                    data-copy="The very tasks used as core evidence for ToM — false-belief, lie detection, TPJ activation — are deeply flawed. If the foundations fail, the theory collapses.">
+                    Copy
+                  </button>
+                </header>
+                <div class="content flex-1">
+                  The <strong>very tasks</strong> used as “core evidence” for ToM — false-belief, lie detection, TPJ
+                  activation —
+                  are deeply flawed. If the foundations fail, the theory collapses.
+                </div>
+                <p class="tag is-light mt-3 stick-bottom">Core tasks are broken</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <style>
+        /* underline (optional)
+  .underline {
+    width: 120px; height: 3px; border-radius: 999px;
+    background: linear-gradient(90deg, #6c63ff, #2ac3ff);
+  } */
+
+        /* 讓四張卡等高 */
+        .equalize .column {
+          display: flex;
+        }
+
+        .equalize .def-card {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          height: 100%;
+          border: 1px solid rgba(0, 0, 0, .08);
+          transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+        }
+
+        .equalize .def-card:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 24px rgba(0, 0, 0, .08);
+          border-color: rgba(0, 0, 0, .12);
+        }
+
+        /* 頭部左右區塊：維持等高需要固定最小高度，避免標題長短導致跳動 */
+        .card-head {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          min-height: 48px;
+        }
+
+        .head-left {
+          display: inline-flex;
+          align-items: center;
+          gap: .65rem;
+        }
+
+        .def-card .def-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          font-size: 18px;
+          background: rgba(108, 99, 255, .10);
+        }
+
+        .def-card.is-summary .def-icon {
+          background: rgba(255, 196, 0, .12);
+        }
+
+        /* 內容撐開，tag 釘底 */
+        .flex-1 {
+          flex: 1;
+        }
+
+        .stick-bottom {
+          margin-top: auto;
+        }
+
+        /* 深色模式 */
+        @media (prefers-color-scheme: dark) {
+          .underline {
+            background: linear-gradient(90deg, #9aa5ff, #7dd3fc);
+          }
+
+          .def-card {
+            border-color: rgba(255, 255, 255, .08);
+          }
+
+          .def-card:hover {
+            border-color: rgba(255, 255, 255, .16);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, .5);
+          }
+
+          .box.def-card {
+            background: rgba(255, 255, 255, .03);
+          }
+        }
+      </style>
+
+      <script>
+        // Minimal copy handler
+        document.addEventListener('click', (e) => {
+          const btn = e.target.closest('.copy-btn');
+          if (!btn) return;
+          const text = btn.getAttribute('data-copy') || '';
+          navigator.clipboard.writeText(text).then(() => {
+            const original = btn.textContent.trim();
+            btn.textContent = 'Copied!';
+            setTimeout(() => (btn.textContent = original), 1200);
+          });
+        });
+      </script>
 
       <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
@@ -499,10 +697,6 @@
         });
       </script>
 
-
-
-
-
       <!-- <div class="columns is-centered has-text-centered" style="margin-bottom: 2rem;"></div> -->
       <div class="columns is-centered has-text-centered" style="overflow: visible;">
         <div class="column is-full" style="overflow: visible;">
@@ -527,7 +721,8 @@
         </div>
       </div>
       <!-- </div>   -->
-      <!--/ Paper video. -->
+
+
 
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
@@ -552,6 +747,32 @@
           </div>
         </div>
       </div>
+
+      <!-- <div class="columns is-centered has-text-centered" style="margin-bottom: 2rem;"></div> -->
+      <div class="columns is-centered has-text-centered" style="overflow: visible;">
+        <div class="column is-full" style="overflow: visible;">
+          <h2 class="title is-3" style="margin-bottom: 1.5rem;">All of These Are Power-Driven Social Behaviors
+          </h2>
+          <div style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: visible;
+          margin-top: 2rem;
+          margin-bottom: 2rem;
+        ">
+            <img src="./static/images/power_problem.png" alt="Core Cognitive Diagram" style="
+              width: auto;
+              max-width: 70%;
+              height: auto;
+              border-radius: 0;
+              display: block;
+            ">
+          </div>
+        </div>
+      </div>
+      <!-- </div>   -->
+      <!--/ Paper video. -->
 
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
